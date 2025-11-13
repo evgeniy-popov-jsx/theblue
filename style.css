@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root{
+  --ink:#0d1b2a;
+  --muted:#243b53;
+  --accent:#0077ff;
+  --bg-light:#fafdff;
+  --bg-mid:#eaf4ff;
+  --bg-deep:#d3e7ff;
+}
+
+body{
+  font-family: 'Inter', sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1000px 600px at 15% 15%, rgba(0,119,255,0.06), transparent 50%),
+    radial-gradient(900px 500px at 85% 85%, rgba(0,119,255,0.05), transparent 50%),
+    linear-gradient(180deg, var(--bg-light) 0%, var(--bg-mid) 60%, var(--bg-deep) 100%);
+  line-height: 1.7;
+  overflow-x: hidden;
+  padding: 0 1.5rem 6rem;
+}
+
+.hero{
+  text-align:center;
+  padding: 6.5rem 1rem 5rem;
+  color: #0a2a44;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1{
+  font-size:3rem;
+  font-weight:600;
+  letter-spacing:-1px;
+  margin-bottom:0.75rem;
+}
+
+.hero .subtitle{
+  font-size:1.15rem;
+  max-width:720px;
+  margin:0 auto;
+  color:var(--muted);
+}
+
+.hero .subtitle span{
+  color:var(--accent);
+  font-weight:500;
+}
+
+main{ max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+
+.section{
+  max-width:720px;
+  margin: 0 auto 4.5rem;
+  text-align:left;
+  padding: 0 1rem;
+  transition: background 0.4s ease;
+}
+
+.section h2{
+  font-size:1.3rem;
+  color:#003566;
+  margin-bottom:1rem;
+  border-left:4px solid var(--accent);
+  padding-left:0.75rem;
+}
+
+.section p{ color: #243b53; margin-bottom:0.85rem; font-size:1rem; }
+
+.section ul{
+  list-style:none;
+  margin:0.8rem 0 1.1rem;
+  padding-left:1.1rem;
+}
+
+.section ul li{
+  position:relative;
+  padding-left:1.2rem;
+  margin-bottom:0.5rem;
+}
+
+.section ul li::before{
+  content: "•";
+  position:absolute;
+  left:0;
+  color:var(--accent);
+  font-weight:700;
+}
+
+.footer{
+  max-width:720px;
+  margin: 2rem auto 0;
+  text-align:center;
+  padding:1.5rem;
+  color:#063150;
+  position: relative;
+  z-index: 1;
+}
+
+.footer a{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:500;
+}
+
+.fade-up{
+  opacity:0;
+  transform:translateY(36px);
+  transition: opacity 0.8s cubic-bezier(.2,.9,.2,1), transform 0.8s cubic-bezier(.2,.9,.2,1);
+}
+
+.fade-up.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media (max-width:720px){
+  .hero h1{ font-size:2.2rem; }
+  .section{ margin-bottom:2.5rem; padding:0 0.5rem; }
+}
